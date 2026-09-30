@@ -7,7 +7,7 @@ Joint project workspace for Aryan and Rishi.
 Clone the repository:
 
 ```sh
-git clone <remote-url> "Aryan and rishi"
+git clone https://github.com/BRV188/Aryan-and-rishi.git "Aryan and rishi"
 cd "Aryan and rishi"
 ```
 
