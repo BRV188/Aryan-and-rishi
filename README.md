@@ -1,4 +1,4 @@
-# aryan-and-rishi
+# Aryan and rishi
 
 Joint project workspace for Aryan and Rishi.
 
@@ -7,8 +7,8 @@ Joint project workspace for Aryan and Rishi.
 Clone the repository:
 
 ```sh
-git clone <remote-url> aryan-and-rishi
-cd aryan-and-rishi
+git clone <remote-url> "Aryan and rishi"
+cd "Aryan and rishi"
 ```
 
 ## Branches
