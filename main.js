@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  const DATA = window.PORTFOLIO_DATA || { PROJECTS: [], STILLS: [] };
+  const DATA = window.PORTFOLIO_DATA || { PROJECTS: [] };
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- HELPERS ---------- */
@@ -121,41 +121,12 @@
     bindHoverPlay(mediaWrap, m.video);
     inner.appendChild(mediaWrap);
 
-    if (p.credits && p.credits.length) {
-      const dl = el('dl', 'featured__credits');
-      p.credits.forEach(function (c) {
-        const wrap = el('div', 'featured__credit');
-        wrap.appendChild(el('dt', null, c[0]));
-        wrap.appendChild(el('dd', null, c[1]));
-        dl.appendChild(wrap);
-      });
-      inner.appendChild(dl);
-    }
-
     if (p.description) inner.appendChild(el('p', 'featured__desc', p.description));
-
-    // Selected production stills.
-    const stills = DATA.STILLS.slice(0, 4);
-    if (stills.length) {
-      const row = el('div', 'featured__stills');
-      stills.forEach(function (s) {
-        const fig = el('figure', 'still');
-        const frame = el('div', 'still__frame');
-        const sm = buildMedia({ src: null, poster: s.poster, label: s.title, ratio: s.ratio });
-        frame.appendChild(sm.frame);
-        fig.appendChild(frame);
-        const cap = el('figcaption', 'still__cap');
-        cap.appendChild(el('span', null, s.title));
-        cap.appendChild(el('span', null, s.year));
-        fig.appendChild(cap);
-        row.appendChild(fig);
-      });
-      inner.appendChild(row);
-    }
 
     inner.setAttribute('data-reveal', '');
     host.appendChild(inner);
   }
+
   /* ---------- SCRAMBLE ---------- */
   const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789/\\|<>-_';
 

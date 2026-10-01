@@ -44,15 +44,20 @@ work grid means restoring markup, renderer and styles together.
 
 | # | Name | CSS class | Content lives in | Notes |
 |---|---|---|---|---|
-| 01 | HERO | `.hero` | `index.html` | Title "More than an editor", showreel, name + role |
+| 01 | HERO | `.hero` | `index.html` | One-line title "More than an editor.", showreel, role line. No name |
 | 02 | INTRODUCTION | `.statement` | `index.html` | Two lines, no images |
-| 03 | FEATURED PROJECT | `.featured` | `data/projects.js` → `PROJECTS` | Renders the one with `featured: true`. Empty in HTML — JS builds it |
+| 03 | FEATURED PROJECT | `.featured` | `data/projects.js` → `PROJECTS` | Title, blurb, video frame, description. No credits, no stills, no name |
 | 04 | MORE THAN EDITING | `.craft` | `index.html` | Big heading + 8 craft pills (STORY, FRAMING, …) |
-| 05 | ABOUT | `.about` | `index.html` | Bio, 3 paragraphs |
+| 05 | ABOUT | `.about` | `index.html` | Bio, 3 paragraphs. No name heading |
 | 06 | SERVICES | `.services` | `index.html` | 4 rows: VIDEO EDITING / FILMMAKING / DOCUMENTARY / POST-PRODUCTION |
 | 07 | PROCESS | `.process` | `index.html` | 4 steps, 01–04 |
 | 08 | CONTACT | `.contact` | `index.html` | Headline, list, 3 buttons |
-| — | FOOTER | `.footer` | `index.html` | Brand, name, copyright. Not numbered |
+| — | FOOTER | `.footer` | `index.html` | Brand, role, `© 2026`. No name |
+
+**No name rule:** the personal name does not appear anywhere in the page body —
+not in the hero, about, featured credits or footer. It exists only in the
+`<head>` meta tags (title, description, author, og:*, twitter:*). Do not add it
+back to visible markup.
 
 Also not a numbered section: the fixed bar at the very top (`.topbar`) with
 the "MT AE" mark, nav links and Mumbai clock.

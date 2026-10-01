@@ -28,10 +28,6 @@ const PROJECTS = [
     blurb: 'A film about identity, overthinking and the different versions of ourselves.',
     description:
       'A short film built around the gap between who we are and who we think we are. Shot handheld across a single night, the piece leans on performance and rhythm rather than plot — the edit carries the argument.',
-    credits: [
-      ['Director', 'Aryan'],
-      ['Editor', 'Aryan'],
-    ],
     poster: 'assets/stills/funk-1.jpg',
     src: null,
     featured: true,
@@ -50,10 +46,6 @@ const PROJECTS = [
     blurb: 'Small conversations, held long enough to become honest.',
     description:
       'A short documentary about everyday rituals and the people who keep them. Mostly observation, very little narration.',
-    credits: [
-      ['Director', 'Aryan'],
-      ['Editor', 'Aryan'],
-    ],
     poster: 'assets/stills/chai-1.jpg',
     src: null,
     size: 'tall',
@@ -69,7 +61,6 @@ const PROJECTS = [
     blurb: 'Culture, people and the everyday life of a city that never stops moving.',
     description:
       'Longer-form documentary editing across culture, identity and daily life. Work that trusts the audience to stay.',
-    credits: [['Editor', 'Aryan']],
     poster: 'assets/stills/doc-1.jpg',
     src: null,
     size: 'standard',
@@ -85,7 +76,6 @@ const PROJECTS = [
     blurb: 'Retention as a storytelling problem, not a gimmick.',
     description:
       'Ongoing editing partnerships with creators. Hook, structure, pacing and a finish that feels like a film rather than a format.',
-    credits: [['Editor', 'Aryan']],
     poster: 'assets/stills/yt-1.jpg',
     src: null,
     size: 'standard',
@@ -101,7 +91,6 @@ const PROJECTS = [
     blurb: 'Tests. No brief, no deadline, no safe answer.',
     description:
       'Visual experiments built to find a language rather than deliver a deliverable. Motion, sound and rhythm pushed until something breaks.',
-    credits: [['Editor', 'Aryan']],
     poster: 'assets/stills/exp-1.jpg',
     src: null,
     size: 'tall',
@@ -110,52 +99,4 @@ const PROJECTS = [
   },
 ];
 
-/**
- * Production stills for the featured project. The first four are shown.
- */
-const BEHIND_WORK = [
-  {
-    id: 'bc-1',
-    title: 'On Set — WHO THE FUnK ARE YOU?',
-    year: '2025',
-    poster: 'assets/stills/bc-1.jpg',
-    ratio: '3 / 2',
-  },
-  {
-    id: 'bc-2',
-    title: 'Location Test',
-    year: '2025',
-    poster: 'assets/stills/bc-2.jpg',
-    ratio: '4 / 5',
-  },
-  {
-    id: 'bc-3',
-    title: 'Frame Study 014',
-    year: '2024',
-    poster: 'assets/stills/bc-3.jpg',
-    ratio: '1 / 1',
-  },
-  {
-    id: 'bc-4',
-    title: 'Light, 6am',
-    year: '2024',
-    poster: 'assets/stills/bc-4.jpg',
-    ratio: '3 / 2',
-  },
-  {
-    id: 'bc-5',
-    title: 'Contact Sheet',
-    year: '2023',
-    poster: 'assets/stills/bc-5.jpg',
-    ratio: '16 / 9',
-  },
-  {
-    id: 'bc-6',
-    title: 'Field Notes',
-    year: '2023',
-    poster: 'assets/stills/bc-6.jpg',
-    ratio: '4 / 5',
-  },
-];
-
-window.PORTFOLIO_DATA = { PROJECTS, STILLS: BEHIND_WORK };
+window.PORTFOLIO_DATA = { PROJECTS };
