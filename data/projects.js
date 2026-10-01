@@ -29,8 +29,8 @@ const PROJECTS = [
     description:
       'A short film built around the gap between who we are and who we think we are. Shot handheld across a single night, the piece leans on performance and rhythm rather than plot — the edit carries the argument.',
     credits: [
-      ['Director', 'Aryan Vishwakarma'],
-      ['Editor', 'Aryan Vishwakarma'],
+      ['Director', 'Aryan'],
+      ['Editor', 'Aryan'],
     ],
     poster: 'assets/stills/funk-1.jpg',
     src: null,
@@ -51,8 +51,8 @@ const PROJECTS = [
     description:
       'A short documentary about everyday rituals and the people who keep them. Mostly observation, very little narration.',
     credits: [
-      ['Director', 'Aryan Vishwakarma'],
-      ['Editor', 'Aryan Vishwakarma'],
+      ['Director', 'Aryan'],
+      ['Editor', 'Aryan'],
     ],
     poster: 'assets/stills/chai-1.jpg',
     src: null,
@@ -69,7 +69,7 @@ const PROJECTS = [
     blurb: 'Culture, people and the everyday life of a city that never stops moving.',
     description:
       'Longer-form documentary editing across culture, identity and daily life. Work that trusts the audience to stay.',
-    credits: [['Editor', 'Aryan Vishwakarma']],
+    credits: [['Editor', 'Aryan']],
     poster: 'assets/stills/doc-1.jpg',
     src: null,
     size: 'standard',
@@ -85,7 +85,7 @@ const PROJECTS = [
     blurb: 'Retention as a storytelling problem, not a gimmick.',
     description:
       'Ongoing editing partnerships with creators. Hook, structure, pacing and a finish that feels like a film rather than a format.',
-    credits: [['Editor', 'Aryan Vishwakarma']],
+    credits: [['Editor', 'Aryan']],
     poster: 'assets/stills/yt-1.jpg',
     src: null,
     size: 'standard',
@@ -101,7 +101,7 @@ const PROJECTS = [
     blurb: 'Tests. No brief, no deadline, no safe answer.',
     description:
       'Visual experiments built to find a language rather than deliver a deliverable. Motion, sound and rhythm pushed until something breaks.',
-    credits: [['Editor', 'Aryan Vishwakarma']],
+    credits: [['Editor', 'Aryan']],
     poster: 'assets/stills/exp-1.jpg',
     src: null,
     size: 'tall',
