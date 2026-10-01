@@ -10,12 +10,16 @@ body and not in the `<head>` meta tags. Do not add a name to markup, meta tags
 or contact links.
 
 Brand name, written exactly as it should appear on the site:
-**More than an editor** — sentence case, never all-caps and never Title Case.
-Hero (`More` / `than` / `an editor.`), the craft section (`More than` /
-`editing.`) and the footer brand all use this casing, along with the `<title>`,
-Open Graph and Twitter meta tags. `text-transform: uppercase` is deliberately
-absent from `.hero__title`, `.craft__title` and `.footer__brand`; do not add it
-back.
+**More than a editor** — sentence case, never all-caps and never Title Case.
+Note the "a" before "editor"; it is part of the name, not a typo. The hero and
+footer brand render it on **one line** — `white-space: nowrap` is set on
+`.hero__title` and `.footer__brand`, so never break it into `More` / `than` / `an
+editor.` spans. The craft section (`More than` / `editing.`) is separate
+copy. `text-transform: uppercase` is deliberately absent from `.hero__title`,
+`.craft__title` and `.footer__brand`; do not add it back.
+
+SEO `<title>` and the `og:title` / `twitter:title` tags use Title Case and the
+fuller form **"More Than a Editor — Filmmaker &amp; Visual Storyteller"**.
 
 Live at `https://brv188.github.io/Aryan-and-rishi/` (GitHub Pages, deployed from
 `main`). No build step — files are served directly.
@@ -24,7 +28,7 @@ Live at `https://brv188.github.io/Aryan-and-rishi/` (GitHub Pages, deployed from
 
 | # | Class | Heading |
 |---|---|---|
-| 01 | `.hero` | More than an editor. + showreel |
+| 01 | `.hero` | More than a editor. + showreel |
 | 02 | `.statement` | "I don't just cut footage." |
 | 03 | `.craft` | More than editing. + 8 craft pills |
 | 04 | `.about` | Who's behind the edit? |
@@ -48,7 +52,7 @@ work grid means restoring markup, renderer and styles together.
 
 | # | Name | CSS class | Content lives in | Notes |
 |---|---|---|---|---|
-| 01 | HERO | `.hero` | `index.html` | One-line title "More than an editor.", showreel, role line |
+| 01 | HERO | `.hero` | `index.html` | One-line title "More than a editor.", showreel, role line |
 | 02 | INTRODUCTION | `.statement` | `index.html` | Two lines, no images |
 | 03 | MORE THAN EDITING | `.craft` | `index.html` | Big heading + 8 craft pills (STORY, FRAMING, …) |
 | 04 | ABOUT | `.about` | `index.html` | Bio, 3 paragraphs |
