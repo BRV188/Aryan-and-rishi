@@ -7,10 +7,10 @@
  *
  * Media notes
  * -----------
- * `poster`  – still image shown before playback. Path relative to the site root.
- * `src`     – video file. Leave as null while you have no cut yet; the
+ * `poster`  - still image shown before playback. Path relative to the site root.
+ * `src`     - video file. Leave as null while you have no cut yet; the
  *             placeholder renders a film-frame treatment instead of a dead player.
- * `fallback`– inline SVG data URI. Only needed if you have no poster image.
+ * `fallback`- inline SVG data URI. Only needed if you have no poster image.
  *
  * Recommended encodes (keeps the page fast):
  *   - MP4  (H.264, 1080p, no audio) for broad support
@@ -111,61 +111,7 @@ const PROJECTS = [
 ];
 
 /**
- * The Edit — large video previews. `cat` must match one of the filter labels.
- */
-const EDITING_WORK = [
-  {
-    id: 'ed-doc-1',
-    cat: 'DOCUMENTARY',
-    title: 'The Long Way Home',
-    year: '2025',
-    poster: 'assets/stills/edit-doc.jpg',
-    src: null,
-  },
-  {
-    id: 'ed-yt-1',
-    cat: 'YOUTUBE',
-    title: 'Things Worth Knowing',
-    year: '2025',
-    poster: 'assets/stills/edit-yt.jpg',
-    src: null,
-  },
-  {
-    id: 'ed-film-1',
-    cat: 'SHORT FILM',
-    title: 'Before the Rain',
-    year: '2024',
-    poster: 'assets/stills/edit-film.jpg',
-    src: null,
-  },
-  {
-    id: 'ed-commercial-1',
-    cat: 'COMMERCIAL',
-    title: 'Made Slowly',
-    year: '2024',
-    poster: 'assets/stills/edit-commercial.jpg',
-    src: null,
-  },
-  {
-    id: 'ed-social-1',
-    cat: 'SOCIAL',
-    title: 'Vertical Stories',
-    year: '2024',
-    poster: 'assets/stills/edit-social.jpg',
-    src: null,
-  },
-  {
-    id: 'ed-motion-1',
-    cat: 'MOTION',
-    title: 'Title Sequence',
-    year: '2023',
-    poster: 'assets/stills/edit-motion.jpg',
-    src: null,
-  },
-];
-
-/**
- * Behind the Camera — photography, production stills, experiments.
+ * Production stills for the featured project. The first four are shown.
  */
 const BEHIND_WORK = [
   {
@@ -212,42 +158,4 @@ const BEHIND_WORK = [
   },
 ];
 
-/**
- * Documentary — visual storytelling strip.
- */
-const DOC_WORK = [
-  {
-    id: 'doc-real-1',
-    title: 'Kolkata, 5:40am',
-    year: '2025',
-    caption: 'Observational. No narration.',
-    poster: 'assets/stills/doc-real-1.jpg',
-    ratio: '4 / 5',
-  },
-  {
-    id: 'doc-real-2',
-    title: 'What We Carry',
-    year: '2024',
-    caption: 'Family, memory, repetition.',
-    poster: 'assets/stills/doc-real-2.jpg',
-    ratio: '16 / 9',
-  },
-  {
-    id: 'doc-real-3',
-    title: 'The Tailors of Lane 7',
-    year: '2024',
-    caption: 'Craft, patience, repetition.',
-    poster: 'assets/stills/doc-real-3.jpg',
-    ratio: '3 / 2',
-  },
-  {
-    id: 'doc-real-4',
-    title: 'Sunday',
-    year: '2023',
-    caption: 'A day with nothing to prove.',
-    poster: 'assets/stills/doc-real-4.jpg',
-    ratio: '4 / 5',
-  },
-];
-
-window.PORTFOLIO_DATA = { PROJECTS, EDITING_WORK, BEHIND_WORK, DOC_WORK };
+window.PORTFOLIO_DATA = { PROJECTS, STILLS: BEHIND_WORK };

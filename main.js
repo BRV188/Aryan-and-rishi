@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  const DATA = window.PORTFOLIO_DATA || { PROJECTS: [], EDITING_WORK: [], BEHIND_WORK: [], DOC_WORK: [] };
+  const DATA = window.PORTFOLIO_DATA || { PROJECTS: [], STILLS: [] };
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- HELPERS ---------- */
@@ -99,47 +99,6 @@
     node.addEventListener('focusout', stop);
   }
 
-  /* ---------- SELECTED WORK ---------- */
-  function renderWork() {
-    const grid = $('[data-work-grid]');
-    if (!grid) return;
-
-    DATA.PROJECTS.forEach(function (p, i) {
-      const card = el('article', 'card card--' + (p.size || 'standard'));
-
-      const mediaWrap = el('div', 'card__media');
-      const inner = el('div', 'card__frame');
-      const m = buildMedia({
-        src: p.src,
-        poster: p.poster,
-        label: p.category,
-        ratio: p.ratio,
-      });
-      inner.appendChild(m.frame);
-      mediaWrap.appendChild(inner);
-      bindHoverPlay(mediaWrap, m.video);
-      card.appendChild(mediaWrap);
-
-      const body = el('div', 'card__body');
-      const title = el('h3', 'card__title', p.title);
-      body.appendChild(title);
-
-      const meta = el('div', 'card__meta');
-      meta.appendChild(el('span', null, p.role));
-      meta.appendChild(el('span', null, p.year));
-      body.appendChild(meta);
-      card.appendChild(body);
-
-      if (p.blurb) card.appendChild(el('p', 'card__blurb', p.blurb));
-
-      // Stagger within the grid.
-      const idx = i % 3;
-      card.style.setProperty('--delay', idx * 90 + 'ms');
-      card.setAttribute('data-reveal', '');
-      grid.appendChild(card);
-    });
-  }
-
   /* ---------- FEATURED PROJECT ---------- */
   function renderFeatured() {
     const host = $('[data-featured]');
@@ -150,7 +109,7 @@
     host.classList.add('is-rendered');
     const inner = el('div', 'featured__inner');
 
-    const kicker = el('span', 'label featured__kicker', '04 — FEATURED PROJECT');
+    const kicker = el('span', 'label featured__kicker', '03 — FEATURED PROJECT');
     inner.appendChild(kicker);
 
     inner.appendChild(el('h2', 'featured__title', p.title));
@@ -175,8 +134,8 @@
 
     if (p.description) inner.appendChild(el('p', 'featured__desc', p.description));
 
-    // Selected production stills — first four entries of the Behind the Camera set.
-    const stills = DATA.BEHIND_WORK.slice(0, 4);
+    // Selected production stills.
+    const stills = DATA.STILLS.slice(0, 4);
     if (stills.length) {
       const row = el('div', 'featured__stills');
       stills.forEach(function (s) {
@@ -197,110 +156,6 @@
     inner.setAttribute('data-reveal', '');
     host.appendChild(inner);
   }
-
-  /* ---------- THE EDIT ---------- */
-  function renderEdit() {
-    const grid = $('[data-edit-grid]');
-    const filters = $('[data-edit-filters]');
-    if (!grid) return;
-
-    const cats = ['ALL'];
-    DATA.EDITING_WORK.forEach(function (w) {
-      if (cats.indexOf(w.cat) === -1) cats.push(w.cat);
-    });
-
-    const cardsByCat = {};
-    DATA.EDITING_WORK.forEach(function (w, i) {
-      const card = el('article', 'vcard');
-      card.dataset.cat = w.cat;
-
-      const frame = el('div', 'vcard__frame');
-      const m = buildMedia({ src: w.src, poster: w.poster, label: w.title, index: String(i + 1).padStart(2, '0') });
-      frame.appendChild(m.frame);
-      card.appendChild(frame);
-      bindHoverPlay(card, m.video);
-
-      const head = el('div', 'vcard__head');
-      head.appendChild(el('h3', 'vcard__title', w.title));
-      head.appendChild(el('span', 'vcard__cat', w.year));
-      card.appendChild(head);
-
-      card.style.setProperty('--delay', (i % 3) * 80 + 'ms');
-      card.setAttribute('data-reveal', '');
-      grid.appendChild(card);
-      cardsByCat[w.cat] = true;
-    });
-
-    if (!filters) return;
-
-    cats.forEach(function (c) {
-      const b = el('button', 'filter', c);
-      b.type = 'button';
-      b.dataset.filter = c;
-      if (c === 'ALL') b.classList.add('is-active');
-      filters.appendChild(b);
-    });
-
-    filters.addEventListener('click', function (e) {
-      const btn = e.target.closest('.filter');
-      if (!btn) return;
-      const want = btn.dataset.filter;
-
-      $$('.filter', filters).forEach(function (f) {
-        f.classList.toggle('is-active', f === btn);
-        f.setAttribute('aria-pressed', String(f === btn));
-      });
-
-      $$('.vcard', grid).forEach(function (c) {
-        c.classList.toggle('is-hidden', want !== 'ALL' && c.dataset.cat !== want);
-      });
-    });
-  }
-
-  /* ---------- BEHIND THE CAMERA ---------- */
-  function renderBehind() {
-    const grid = $('[data-behind-grid]');
-    if (!grid) return;
-
-    DATA.BEHIND_WORK.forEach(function (s, i) {
-      const fig = el('figure', 'still');
-      const frame = el('div', 'still__frame');
-      const m = buildMedia({ src: null, poster: s.poster, label: s.title, ratio: s.ratio });
-      frame.appendChild(m.frame);
-      fig.appendChild(frame);
-
-      const cap = el('figcaption', 'still__cap');
-      cap.appendChild(el('span', null, s.title));
-      cap.appendChild(el('span', null, s.year));
-      fig.appendChild(cap);
-
-      fig.setAttribute('data-reveal', '');
-      fig.style.setProperty('--delay', (i % 3) * 80 + 'ms');
-      grid.appendChild(fig);
-    });
-  }
-
-  /* ---------- DOCUMENTARY ---------- */
-  function renderDocs() {
-    const grid = $('[data-docs-grid]');
-    if (!grid) return;
-
-    DATA.DOC_WORK.forEach(function (d, i) {
-      const fig = el('figure', 'doccard');
-      const frame = el('div', 'doccard__frame');
-      const m = buildMedia({ src: null, poster: d.poster, label: d.title, ratio: d.ratio });
-      frame.appendChild(m.frame);
-      fig.appendChild(frame);
-
-      fig.appendChild(el('figcaption', 'doccard__title', d.title));
-      if (d.caption) fig.appendChild(el('p', 'doccard__cap', d.caption));
-
-      fig.setAttribute('data-reveal', '');
-      fig.style.setProperty('--delay', (i % 4) * 90 + 'ms');
-      grid.appendChild(fig);
-    });
-  }
-
   /* ---------- SCRAMBLE ---------- */
   const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789/\\|<>-_';
 
@@ -425,11 +280,7 @@
 
   /* ---------- BOOT ---------- */
   function boot() {
-    renderWork();
     renderFeatured();
-    renderEdit();
-    renderBehind();
-    renderDocs();
 
     initReveal();
     initCraft();

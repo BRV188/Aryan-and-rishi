@@ -18,13 +18,32 @@ back.
 Live at `https://brv188.github.io/Aryan-and-rishi/` (GitHub Pages, deployed from
 `main`). No build step — files are served directly.
 
+## Sections (8, in order)
+
+| # | Class | Heading |
+|---|---|---|
+| 01 | `.hero` | More / than / an editor. + showreel |
+| 02 | `.statement` | "I don't just cut footage." |
+| 03 | `.featured` | WHO THE FUnK ARE YOU? (rendered from data) |
+| 04 | `.craft` | More than editing. + 8 craft pills |
+| 05 | `.about` | Who's behind the edit? |
+| 06 | `.services` | What I can do |
+| 07 | `.process` | From idea to final frame. |
+| 08 | `.contact` | Let's make something worth watching. |
+
+Selected Work, The Edit, Filmmaking and Documentary sections were **removed**
+by request. Their CSS, JS renderers and data arrays were deleted too — do not
+reference `.card`, `.vcard`, `.doccard`, `.work__grid`, `.edit__grid`,
+`.behind__grid`, `.docs__grid` or `.filter`; they no longer exist. Re-adding a
+work grid means restoring markup, renderer and styles together.
+
 ## Structure
 
 ```
 index.html                 markup + inline .js/.no-js class swap in <head>
 style.css                  all styles (design tokens at :top in :root)
-main.js                    all rendering + scroll motion
-data/projects.js           ALL content: projects, editing work, stills, docs
+main.js                    rendering + scroll motion (renderFeatured only)
+data/projects.js           ALL content: PROJECTS (5) + BEHIND_WORK (stills)
 assets/
   favicon.svg              "M/A" monogram
   README.md                which media files go where + encoding guidance
@@ -42,21 +61,16 @@ python -m http.server 8090
 
 ## Adding work — edit ONLY data/projects.js
 
-This is the single source of truth. Every grid, section, hover preview and the
-featured block render from it. Never hand-edit `index.html` to add a project.
+This is the single source of truth. Never hand-edit `index.html` to add content.
 
-Four arrays:
+Two arrays:
 
-- `PROJECTS` — the Selected Work grid + Featured Project
-  - `size: 'wide' | 'standard' | 'tall'` sets the asymmetric column span
-  - `ratio` sets the frame aspect ratio (`'16 / 9'`, `'4 / 5'`, etc.)
-  - `featured: true` promotes an entry into the Featured Project section
-- `EDITING_WORK` — The Edit grid. `cat` must match a filter label
-  (`DOCUMENTARY`, `YOUTUBE`, `SHORT FILM`, `COMMERCIAL`, `SOCIAL`, `MOTION`).
-  Filters are generated automatically from the data — add a new `cat` value and
-  a new filter button appears.
-- `BEHIND_WORK` — Behind the Camera stills
-- `DOC_WORK` — Documentary strip
+- `PROJECTS` — five entries. Only the one with `featured: true` renders (the
+  Featured Project block). The other four are held in the data file ready for a
+  work grid to be restored. `ratio` sets the frame aspect ratio
+  (`'16 / 9'`, `'4 / 5'`, etc.).
+- `BEHIND_WORK` — production stills. The first four are shown under the
+  featured project. Exported as `STILLS`.
 
 Set `src: null` while you have no video cut. The site then renders a labelled
 film-frame placeholder instead of a broken player, so layouts stay presentable
@@ -110,11 +124,26 @@ adding elements with an `opacity: 0` start state.
 
 `@media (max-width: 900px)` in `style.css` is a dedicated layout, not a shrink:
 
-- Section priority: hero → showreel → work → featured → edit → about → contact
-- Cards go full-bleed single column, 4:5 frames
-- Behind the Camera shows 4 stills, rest hidden
-- Blurbs always visible (no hover on touch)
+- Hero title drops to weight 700 / `1.25rem–1.875rem`
+- Showreel and featured media go 4:5 for immersion
+- Featured stills become a 2-up grid
+- About, services and process go single column
+- Contact buttons stack full width
 - Nav and clock hidden
+
+## Encoding warning
+
+Do not use PowerShell `Get-Content` / `Set-Content` to edit these files. On
+Windows PowerShell 5.1 that round-trip mangles the em-dash (U+2014) into
+U+201D. Use the editor tools, or if you must script it use
+`[System.IO.File]::ReadAllText/WriteAllText` with an explicit
+`UTF8Encoding($false)`. Verify with:
+
+```powershell
+$b=[System.IO.File]::ReadAllBytes($f)
+0..($b.Length-3) | ? { $b[$_] -eq 0xE2 -and $b[$_+1] -eq 0x80 -and $b[$_+2] -eq 0x9D }
+# must return nothing
+```
 
 ## Content accuracy
 
