@@ -42,7 +42,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
-  font-size: clamp(0.875rem, 0.85rem + 0.15vw, 0.9375rem);
+  font-size: clamp(0.8125rem, 0.8rem + 0.1vw, 0.875rem);
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -110,7 +110,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .sec-head__title {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 6.2vw, 4.25rem);
+  font-size: clamp(1.5rem, 4.6vw, 3rem);
   font-weight: 800;
   line-height: 0.86;
   letter-spacing: -0.045em;
@@ -118,7 +118,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .sec-head__sub {
-  font-size: clamp(0.9375rem, 1.15vw, 1.125rem);
+  font-size: clamp(0.875rem, 1vw, 1rem);
   font-weight: 300;
   color: var(--text-dim);
   max-width: 46ch;
@@ -297,7 +297,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 9vw, 7.5rem);
+  font-size: clamp(1.75rem, 6.8vw, 5rem);
   font-weight: 900;
   line-height: 0.88;
   letter-spacing: -0.045em;
@@ -311,7 +311,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-top: clamp(1.5rem, 3vw, 2.5rem);
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(1rem, 1.9vw, 1.5rem);
+  font-size: clamp(0.9375rem, 1.5vw, 1.1875rem);
   color: var(--text-dim);
 }
 
@@ -372,14 +372,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .hero__name {
-  font-size: clamp(0.9375rem, 1.4vw, 1.125rem);
+  font-size: clamp(0.875rem, 1.15vw, 1rem);
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .hero__role {
-  font-size: clamp(0.8125rem, 1vw, 0.875rem);
+  font-size: clamp(0.75rem, 0.9vw, 0.8125rem);
   color: var(--text-dim);
 }
 
@@ -417,7 +417,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .statement__big {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.9vw, 2.25rem);
+  font-size: clamp(1.0625rem, 2.3vw, 1.6875rem);
   font-weight: 500;
   line-height: 1.02;
   letter-spacing: -0.035em;
@@ -426,7 +426,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .statement__body {
   color: var(--text-dim);
   font-weight: 300;
-  font-size: clamp(0.875rem, 1.05vw, 1rem);
+  font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
   max-width: 44ch;
 }
 
@@ -486,7 +486,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .card__title {
-  font-size: clamp(0.9375rem, 1.4vw, 1.25rem);
+  font-size: clamp(0.875rem, 1.15vw, 1.0625rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.05;
@@ -537,7 +537,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .featured__title {
   font-family: var(--font-display);
-  font-size: clamp(1.625rem, 5.5vw, 4rem);
+  font-size: clamp(1.375rem, 4.2vw, 2.75rem);
   font-weight: 900;
   line-height: 0.84;
   letter-spacing: -0.05em;
@@ -549,7 +549,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-top: clamp(1.25rem, 2.5vw, 2rem);
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(0.9375rem, 1.6vw, 1.3125rem);
+  font-size: clamp(0.875rem, 1.25vw, 1.125rem);
   color: var(--text-dim);
   max-width: 34ch;
 }
@@ -578,7 +578,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .featured__credit dd {
   margin: 0;
-  font-size: clamp(0.9375rem, 1.15vw, 1.0625rem);
+  font-size: clamp(0.875rem, 1vw, 0.9375rem);
   font-weight: 500;
 }
 
@@ -587,7 +587,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   max-width: 58ch;
   color: var(--text-dim);
   font-weight: 300;
-  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  font-size: clamp(0.875rem, 0.95vw, 0.9375rem);
 }
 
 .featured__stills {
@@ -607,7 +607,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .craft__title {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 6.6vw, 4.5rem);
+  font-size: clamp(1.5rem, 4.8vw, 3.25rem);
   font-weight: 900;
   line-height: 0.92;
   letter-spacing: -0.045em;
@@ -631,7 +631,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .craft__list li {
   font-family: var(--font-mono);
-  font-size: clamp(0.6875rem, 1.15vw, 0.875rem);
+  font-size: clamp(0.625rem, 0.95vw, 0.75rem);
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -707,7 +707,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .vcard__title {
-  font-size: clamp(0.875rem, 1.1vw, 1rem);
+  font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
   font-weight: 600;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -760,7 +760,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .doccard__title {
   margin-top: 1rem;
-  font-size: clamp(0.9375rem, 1.4vw, 1.25rem);
+  font-size: clamp(0.875rem, 1.15vw, 1.0625rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -782,7 +782,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .about__name {
   font-family: var(--font-display);
-  font-size: clamp(1.125rem, 2.4vw, 1.75rem);
+  font-size: clamp(1rem, 1.9vw, 1.375rem);
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 0.95;
@@ -790,7 +790,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .about__prose { display: grid; gap: 1.25rem; max-width: 58ch; }
-.about__prose p { color: var(--text-dim); font-weight: 300; font-size: clamp(0.9375rem, 1.1vw, 1.0625rem); }
+.about__prose p { color: var(--text-dim); font-weight: 300; font-size: clamp(0.875rem, 0.95vw, 0.9375rem); }
 
 /* ---------- SERVICES ---------- */
 .services { padding: 0 0 var(--section-gap); max-width: var(--maxw); margin-inline: auto; }
@@ -809,14 +809,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .services__item:hover { padding-left: clamp(0.5rem, 2vw, 1.75rem); }
 
 .services__item h3 {
-  font-size: clamp(1rem, 2.1vw, 1.5rem);
+  font-size: clamp(0.9375rem, 1.65vw, 1.25rem);
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 1;
   text-transform: uppercase;
 }
 
-.services__item p { color: var(--text-dim); font-size: clamp(0.8125rem, 1.05vw, 0.9375rem); font-weight: 300; }
+.services__item p { color: var(--text-dim); font-size: clamp(0.75rem, 0.9vw, 0.875rem); font-weight: 300; }
 
 /* ---------- PROCESS ---------- */
 .process { padding: 0 0 var(--section-gap); max-width: var(--maxw); margin-inline: auto; }
@@ -841,7 +841,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .process__step h3 {
-  font-size: clamp(0.9375rem, 1.35vw, 1.125rem);
+  font-size: clamp(0.875rem, 1.1vw, 1rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -863,7 +863,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .contact__title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4.6vw, 3.25rem);
+  font-size: clamp(1.25rem, 3.4vw, 2.25rem);
   font-weight: 900;
   line-height: 0.87;
   letter-spacing: -0.05em;
@@ -872,7 +872,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .contact__body {
   font-family: var(--font-mono);
-  font-size: clamp(0.6875rem, 1.1vw, 0.8125rem);
+  font-size: clamp(0.625rem, 0.9vw, 0.75rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
@@ -909,7 +909,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .footer__brand {
   font-family: var(--font-display);
-  font-size: clamp(1.125rem, 3.4vw, 2.25rem);
+  font-size: clamp(1rem, 2.6vw, 1.75rem);
   font-weight: 900;
   letter-spacing: -0.045em;
   line-height: 0.95;
@@ -952,14 +952,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     padding-top: clamp(5rem, 18vh, 7rem);
     gap: 2rem;
   }
-  .hero__title { font-size: clamp(1.75rem, 8.5vw, 3rem); line-height: 0.92; }
-  .hero__tagline { font-size: clamp(0.9375rem, 3.2vw, 1.1875rem); }
+  .hero__title { font-size: clamp(1.375rem, 7vw, 2.5rem); line-height: 0.95; }
+  .hero__tagline { font-size: clamp(0.875rem, 2.6vw, 1.0625rem); }
   .reel { aspect-ratio: 4 / 5; }
   .reel__meta { left: var(--gutter); right: var(--gutter); }
   .hero__scroll { display: none; }
 
   .statement { grid-template-columns: 1fr; gap: 1.75rem; }
-  .statement__big { font-size: clamp(1.25rem, 4.6vw, 1.875rem); }
+  .statement__big { font-size: clamp(1.0625rem, 3.6vw, 1.5rem); }
   .statement__body { font-size: 1rem; }
 
   /* Full-bleed asymmetric cards on mobile */
@@ -980,11 +980,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .featured { padding-inline: 0; }
   .featured__inner { padding-inline: var(--gutter); }
   .featured__media { aspect-ratio: 4 / 5; }
-  .featured__title { font-size: clamp(1.5rem, 6.4vw, 2.5rem); }
-  .featured__sub { font-size: clamp(0.9375rem, 2.9vw, 1.125rem); }
+  .featured__title { font-size: clamp(1.25rem, 4.8vw, 1.875rem); }
+  .featured__sub { font-size: clamp(0.875rem, 2.2vw, 1rem); }
   .featured__stills { grid-template-columns: 1fr; }
 
-  .craft__title { font-size: clamp(1.625rem, 8.4vw, 3rem); }
+  .craft__title { font-size: clamp(1.375rem, 6.4vw, 2.25rem); }
   .craft__list { gap: 0.4rem; padding-top: 2.5rem; }
   .craft__list li { font-size: 0.625rem; padding: 0.45rem 0.7rem; letter-spacing: 0.16em; }
 
@@ -998,22 +998,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .stills__more { display: block; }
 
   .docs__grid { grid-template-columns: 1fr; gap: 3rem; }
-  .doccard__title { font-size: clamp(0.9375rem, 3.6vw, 1.25rem); }
+  .doccard__title { font-size: clamp(0.875rem, 2.8vw, 1.0625rem); }
 
   .about__body { grid-template-columns: 1fr; gap: 1.75rem; }
 
   .services__item { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.5rem 0; }
-  .services__item h3 { font-size: clamp(1.0625rem, 4.3vw, 1.375rem); }
+  .services__item h3 { font-size: clamp(0.9375rem, 3.2vw, 1.1875rem); }
 
   .process__list { grid-template-columns: 1fr; gap: 2rem; }
   .process__num { margin-bottom: 0.75rem; }
 
-  .contact__title { font-size: clamp(1.375rem, 6.2vw, 2.5rem); }
+  .contact__title { font-size: clamp(1.125rem, 4.4vw, 1.875rem); }
   .contact__body { font-size: 0.6875rem; line-height: 1.9; }
   .contact__actions { width: 100%; flex-direction: column; }
   .btn { width: 100%; text-align: center; padding: 1.1rem 1.5rem; }
 
-  .footer__brand { font-size: clamp(1.125rem, 6.2vw, 2rem); }
+  .footer__brand { font-size: clamp(0.9375rem, 4.4vw, 1.5rem); }
   .footer__row { flex-direction: column; gap: 0.35rem; }
 }
 
