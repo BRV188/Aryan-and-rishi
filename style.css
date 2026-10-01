@@ -1,6 +1,6 @@
 /* ============================================================
-   MORE THAN AN EDITOR â€— Aryan Vishwakarma
-   Cinematic editorial portfolio. No build step.
+   MORE THAN AN EDITOR — cinematic editorial portfolio.
+   No build step.
    ============================================================ */
 
 /* ---------- TOKENS ---------- */
@@ -297,12 +297,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 3.6vw, 2.5rem);
+  font-size: clamp(1.0625rem, 4.6vw, 2.25rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.035em;
   text-transform: none;
-  max-width: 20ch;
+  white-space: nowrap;
 }
 
 .hero__line { display: block; }
@@ -424,52 +424,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-weight: 300;
   font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
   max-width: 44ch;
-}
-
-/* ---------- FEATURED PROJECT ---------- */
-.featured {
-  padding: 0 0 var(--section-gap);
-  max-width: var(--maxw);
-  margin-inline: auto;
-  display: none;
-}
-.featured.is-rendered { display: block; }
-
-.featured__inner { padding: 0 var(--gutter); }
-
-.featured__kicker { display: block; margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
-
-.featured__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.375rem, 4.2vw, 2.75rem);
-  font-weight: 900;
-  line-height: 0.84;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;
-}
-
-.featured__sub {
-  margin-top: clamp(1.25rem, 2.5vw, 2rem);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(0.875rem, 1.25vw, 1.125rem);
-  color: var(--text-dim);
-  max-width: 34ch;
-}
-
-.featured__media {
-  margin-top: clamp(2.5rem, 6vw, 5rem);
-  aspect-ratio: 21 / 9;
-}
-
-
-.featured__desc {
-  margin-top: clamp(2rem, 4vw, 3.5rem);
-  max-width: 58ch;
-  color: var(--text-dim);
-  font-weight: 300;
-  font-size: clamp(0.875rem, 0.95vw, 0.9375rem);
 }
 
 
@@ -663,6 +617,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   letter-spacing: -0.045em;
   line-height: 0.95;
   text-transform: none;
+  white-space: nowrap;
 }
 
 .footer__row {
@@ -700,7 +655,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     padding-top: clamp(5rem, 18vh, 7rem);
     gap: 2rem;
   }
-  .hero__title { font-size: clamp(1.125rem, 4.4vw, 1.625rem); line-height: 1.1; }
+  .hero__title { font-size: clamp(0.9375rem, 4.2vw, 1.5rem); line-height: 1.15; }
   .hero__tagline { font-size: clamp(0.875rem, 2.6vw, 1.0625rem); }
   .reel { aspect-ratio: 4 / 5; }
   .reel__meta { left: var(--gutter); right: var(--gutter); }
@@ -709,12 +664,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .statement { grid-template-columns: 1fr; gap: 1.75rem; }
   .statement__big { font-size: clamp(1.0625rem, 3.6vw, 1.5rem); }
   .statement__body { font-size: 1rem; }
-
-  .featured { padding-inline: 0; }
-  .featured__inner { padding-inline: var(--gutter); }
-  .featured__media { aspect-ratio: 4 / 5; }
-  .featured__title { font-size: clamp(1.25rem, 4.8vw, 1.875rem); }
-  .featured__sub { font-size: clamp(0.875rem, 2.2vw, 1rem); }
 
   .craft__title { font-size: clamp(1.375rem, 6.4vw, 2.25rem); }
   .craft__list { gap: 0.4rem; padding-top: 2.5rem; }

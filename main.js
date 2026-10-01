@@ -1,13 +1,12 @@
 /* ============================================================
-   MORE THAN AN EDITOR — Aryan Vishwakarma
-   Renders all work from data/projects.js and drives scroll motion.
+   MORE THAN AN EDITOR
+   Scroll motion: reveal, scramble, craft pills, clock, showreel.
    No dependencies.
    ============================================================ */
 
 (function () {
   'use strict';
 
-  const DATA = window.PORTFOLIO_DATA || { PROJECTS: [] };
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- HELPERS ---------- */
@@ -20,112 +19,6 @@
     if (text != null) n.textContent = text;
     return n;
   };
-
-  /**
-   * Builds a film-frame block. If a video exists it plays muted on hover /
-   * click; if not, we show a designed placeholder so the layout still reads
-   * as intentional rather than broken.
-   */
-  function buildMedia(opts) {
-    const { src, poster, label, index, ratio } = opts;
-    const frame = el('div', 'media media--empty');
-    if (ratio) frame.style.aspectRatio = ratio;
-    frame.dataset.ratio = ratio || '';
-
-    if (label) frame.appendChild(el('span', 'media__stamp', label));
-    if (index) frame.appendChild(el('span', 'media__index', index));
-
-    let video = null;
-    let img = null;
-
-    if (src) {
-      video = el('video', 'media__video');
-      video.muted = true;
-      video.playsInline = true;
-      video.loop = true;
-      video.preload = 'none';
-      if (poster) video.poster = poster;
-      video.setAttribute('aria-label', label || 'Video');
-      const s = el('source');
-      s.src = src;
-      s.type = 'video/mp4';
-      video.appendChild(s);
-      frame.appendChild(video);
-    } else if (poster) {
-      img = el('img', 'media__img');
-      img.src = poster;
-      img.alt = label || '';
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.addEventListener('load', function () {
-        frame.classList.remove('media--empty');
-        img.classList.add('is-loaded');
-      });
-      // Poster missing — drop the broken image and fall back to the film-frame
-      // placeholder so the section still reads as intentional.
-      img.addEventListener('error', function () {
-        img.remove();
-        if (!video) frame.appendChild(buildCue());
-      });
-      frame.appendChild(img);
-    } else {
-      frame.appendChild(buildCue());
-    }
-
-    return { frame, video, img };
-  }
-
-  function buildCue() {
-    const cue = el('div', 'media__cue');
-    cue.appendChild(el('span', null, 'FOOTAGE PENDING'));
-    return cue;
-  }
-
-  /** Hover-to-play. Returns a cleanup-free no-op when there is no video. */
-  function bindHoverPlay(node, video) {
-    if (!video) return;
-    const play = () => {
-      const p = video.play();
-      if (p && p.catch) p.catch(() => {});
-      video.classList.add('is-playing');
-    };
-    const stop = () => {
-      video.pause();
-      video.classList.remove('is-playing');
-    };
-    node.addEventListener('mouseenter', play);
-    node.addEventListener('mouseleave', stop);
-    node.addEventListener('focusin', play);
-    node.addEventListener('focusout', stop);
-  }
-
-  /* ---------- FEATURED PROJECT ---------- */
-  function renderFeatured() {
-    const host = $('[data-featured]');
-    if (!host) return;
-    const p = DATA.PROJECTS.find((x) => x.featured);
-    if (!p) return;
-
-    host.classList.add('is-rendered');
-    const inner = el('div', 'featured__inner');
-
-    const kicker = el('span', 'label featured__kicker', '03 — FEATURED PROJECT');
-    inner.appendChild(kicker);
-
-    inner.appendChild(el('h2', 'featured__title', p.title));
-    inner.appendChild(el('p', 'featured__sub', p.blurb));
-
-    const mediaWrap = el('div', 'featured__media');
-    const m = buildMedia({ src: p.src, poster: p.poster, label: p.title, ratio: p.ratio });
-    mediaWrap.appendChild(m.frame);
-    bindHoverPlay(mediaWrap, m.video);
-    inner.appendChild(mediaWrap);
-
-    if (p.description) inner.appendChild(el('p', 'featured__desc', p.description));
-
-    inner.setAttribute('data-reveal', '');
-    host.appendChild(inner);
-  }
 
   /* ---------- SCRAMBLE ---------- */
   const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789/\\|<>-_';
@@ -251,8 +144,6 @@
 
   /* ---------- BOOT ---------- */
   function boot() {
-    renderFeatured();
-
     initReveal();
     initCraft();
     initClock();
