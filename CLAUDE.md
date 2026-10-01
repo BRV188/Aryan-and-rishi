@@ -5,7 +5,13 @@ Guidance for AI assistants working in this repository.
 ## Project
 
 Static portfolio site for **Aryan Vishwakarma** — filmmaker, video editor and
-documentary storyteller. Brand concept: **"More Than an Editor."**
+documentary storyteller.
+
+Brand name, written exactly as it should appear on the site:
+**More Than An Editor** — proper case, never all-caps. The hero, the
+`MORE THAN EDITING` section and the footer brand all use this casing.
+`text-transform: uppercase` is deliberately absent from `.hero__title`,
+`.craft__title` and `.footer__brand`; do not add it back.
 
 Live at `https://brv188.github.io/Aryan-and-rishi/` (GitHub Pages, deployed from
 `main`). No build step — files are served directly.

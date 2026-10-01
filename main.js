@@ -302,7 +302,7 @@
   }
 
   /* ---------- SCRAMBLE ---------- */
-  const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\|<>-_';
+  const SCRAMBLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789/\\|<>-_';
 
   function scramble(node) {
     if (reduced) return;
